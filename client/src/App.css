@@ -1,0 +1,312 @@
+/* Базовые настройки */
+:root {
+  --primary: #ff6b6b;
+  --dark: #2d3436;
+  --light: #f5f6fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Анимированная шапка */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.5rem 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.5s ease;
+  background: rgba(45, 52, 54, 0.9);
+}
+
+.header.open {
+  background: var(--dark);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+/* Кнопка меню */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Анимированные кнопки */
+.cta-pulse {
+  position: relative;
+  padding: 1rem 2rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  overflow: hidden;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 107, 107, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
+/* Общие стили для мобильных устройств */
+@media (max-width: 768px) {
+  /* Navigation */
+  .navigation {
+    padding: 1rem;
+  }
+
+  .phone-link span {
+    display: none;
+  }
+
+  /* HeroSection */
+  .dark-hero {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .blocks-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .blocks,
+  .main-block {
+    width: 100%;
+  }
+
+  .f-blocks {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .feature-block {
+    width: calc(50% - 0.5rem);
+    height: auto;
+    padding: 1rem;
+  }
+
+  .content-overlay h2 {
+    font-size: 1.5rem;
+  }
+
+  /* AboutSection */
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  /* CatalogSection */
+  .card {
+    width: 90%;
+    height: 350px;
+  }
+
+  .carousel-container {
+    padding: 0 0px;
+  }
+
+  /* StepsSection */
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .step-card {
+    padding-left: 3rem;
+  }
+
+  .step-number {
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .connector-line {
+    display: none;
+  }
+
+  /* AdvantagesSection */
+  .advantages-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Адаптация для планшетов */
+@media (min-width: 769px) and (max-width: 992px) {
+  /* Navigation */
+  .desktop-nav ul {
+    gap: 1rem;
+  }
+
+  /* AboutSection */
+  .about-container {
+    gap: 2rem;
+  }
+
+  /* CatalogSection */
+  .card {
+    width: 300px;
+  }
+}
+
+/* Дополнительные исправления для очень маленьких экранов */
+@media (max-width: 480px) {
+  /* HeroSection */
+
+  .content-overlay h2 {
+    font-size: 1.2rem;
+  }
+
+  .content-overlay p {
+    font-size: 0.9rem;
+  }
+
+  /* AboutSection */
+  .about-title {
+    font-size: 1.8rem;
+  }
+
+  /* StepsSection */
+  .step-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* index.css - Исправления для навигации и этапов */
+
+/* Навигация - мобильная версия */
+@media (max-width: 992px) {
+  .navigation {
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .mobile-menu ul {
+    padding: 0 1.5rem;
+  }
+
+  .mobile-menu a {
+    font-size: 1.1rem;
+    padding: 1rem 0;
+  }
+
+  .phone-link {
+    font-size: 0;
+  }
+
+  .phone-link svg {
+    font-size: 1.2rem;
+  }
+}
+
+/* Этапы работы - улучшенная мобильная версия */
+@media (max-width: 768px) {
+  .steps-section {
+    padding: 3rem 1rem;
+  }
+
+  .feature-block {
+    width: 100%;
+  }
+
+  .steps-grid {
+    gap: 2.5rem;
+    padding-left: 2rem;
+  }
+
+  .step-card {
+    padding: 1.8rem 1.5rem 1.8rem 2.5rem;
+    border-left: 2px solid #c19a6b;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .step-number {
+    left: -12px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .step-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  .step-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* Дополнительные исправления для очень маленьких экранов */
+@media (max-width: 480px) {
+  /* Навигация */
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  .mobile-menu a {
+    font-size: 1rem;
+  }
+
+  /* Этапы */
+  .step-card {
+    padding: 1.5rem 1rem 1.5rem 2rem;
+  }
+
+  .step-title {
+    font-size: 1.1rem;
+  }
+
+  .step-text {
+    font-size: 0.9rem;
+  }
+  .card-description {
+    font-size: 13px;
+  }
+}
