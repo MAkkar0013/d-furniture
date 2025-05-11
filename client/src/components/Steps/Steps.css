@@ -1,0 +1,85 @@
+.work-steps {
+  background: #121212;
+  color: #e0e0e0;
+  padding: 5rem 2rem;
+  position: relative;
+}
+
+.steps-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.step {
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  align-items: center;
+  position: relative;
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+.step-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(193, 154, 107, 0.2);
+  min-width: 80px;
+  text-align: center;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-title {
+  font-size: 1.5rem;
+  color: #c19a6b;
+  margin-bottom: 1rem;
+}
+
+.step-description {
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.step-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.connector {
+  position: absolute;
+  left: 40px;
+  top: 80px;
+  bottom: -4rem;
+  width: 2px;
+  background: rgba(193, 154, 107, 0.3);
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .step {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .step-image {
+    width: 100%;
+    order: -1;
+  }
+
+  .step-number {
+    display: none;
+  }
+
+  .connector {
+    display: none;
+  }
+}
